@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Playbook | Build Strength Around a Busy Schedule</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:    #0F0F0E;
+  --off-black:#1A1A18;
+  --dark:     #242420;
+  --gold:     #C9A84C;
+  --gold-lt:  #E4C97A;
+  --gold-dim: rgba(201,168,76,0.15);
+  --white:    #F6F4EF;
+  --pure:     #FFFFFF;
+  --muted:    #888880;
+  --border-d: rgba(201,168,76,0.18);
+  --border-l: #E2DDD4;
+  --body:     #3A3A36;
+  --fd:       'Playfair Display', Georgia, serif;
+  --fb:       'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--fb); background: var(--white); color: var(--body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--black);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-d);
+}
+.nav-logo { font-family: var(--fd); font-size: 18px; color: var(--white); font-weight: 700; }
+.nav-logo span { color: var(--gold); }
+.nav-btn {
+  background: var(--gold); color: var(--black);
+  font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  padding: 9px 20px; border-radius: 3px; text-decoration: none;
+  transition: background .15s;
+}
+.nav-btn:hover { background: var(--gold-lt); }
+
+/* HERO */
+.hero {
+  background: var(--black);
+  padding: 5rem 2rem 4.5rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 55% at 50% -10%, rgba(201,168,76,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--border-d);
+  padding: 5px 16px; border-radius: 2px; margin-bottom: 2rem;
+}
+.hero h1 {
+  font-family: var(--fd);
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 700; color: var(--white);
+  line-height: 1.1; max-width: 740px;
+  margin: 0 auto 1.25rem;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero-sub {
+  font-size: 17px; color: var(--muted);
+  max-width: 500px; margin: 0 auto 2rem;
+  line-height: 1.65;
+}
+.value-stack {
+  display: inline-flex; flex-direction: column; align-items: flex-start;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-d);
+  border-radius: 6px;
+  padding: 1.25rem 1.75rem;
+  margin: 0 auto 2.25rem;
+  text-align: left;
+  max-width: 400px; width: 100%;
+  position: relative; z-index: 1;
+}
+.vs-label {
+  font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .75rem;
+}
+.vs-row {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: .3rem 0; font-size: 14px;
+}
+.vs-row span:first-child { color: #666660; }
+.vs-row .strike { text-decoration: line-through; color: var(--muted); font-weight: 400; }
+.vs-divider { width: 100%; height: 1px; background: var(--border-d); margin: .6rem 0; }
+.vs-total { display: flex; align-items: baseline; justify-content: space-between; width: 100%; padding-top: .4rem; }
+.vs-total-label { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.vs-total-price { font-family: var(--fd); font-size: 38px; font-weight: 700; color: var(--white); line-height: 1; }
+.vs-total-price sup { font-size: 18px; color: var(--gold); vertical-align: super; }
+.vs-total-price sub { font-size: 13px; font-weight: 400; color: var(--muted); vertical-align: baseline; margin-left: 2px; }
+.btn-cta {
+  display: inline-block;
+  background: var(--gold); color: var(--black);
+  font-size: 15px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  padding: 17px 44px; border-radius: 3px; text-decoration: none;
+  transition: background .15s, transform .1s;
+  position: relative; z-index: 1;
+}
+.btn-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
+.hero-fine { margin-top: .875rem; font-size: 12px; color: #444440; letter-spacing: .06em; text-transform: uppercase; position: relative; z-index: 1; }
+
+/* SHARED */
+.wrap { max-width: 700px; margin: 0 auto; padding: 5rem 2rem; }
+.wrap-full { padding: 5rem 2rem; }
+.eyebrow { display: block; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+h2 { font-family: var(--fd); font-weight: 700; font-size: clamp(26px, 4vw, 38px); color: var(--off-black); line-height: 1.2; margin-bottom: 1rem; }
+h2.light { color: var(--white); }
+.rule { width: 36px; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+
+/* PROBLEM */
+.problem-intro { font-size: 17px; color: var(--body); line-height: 1.7; margin-bottom: 2rem; }
+.pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .875rem; }
+@media (max-width: 540px) { .pain-grid { grid-template-columns: 1fr; } }
+.pain-card { background: var(--pure); border: 1px solid var(--border-l); border-left: 3px solid var(--gold); border-radius: 4px; padding: 1.25rem 1.25rem 1.25rem 1rem; }
+.pain-card p { font-size: 14px; line-height: 1.6; }
+
+/* BLOCKS */
+.blocks-section { background: var(--off-black); }
+.blocks-intro { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; max-width: 560px; }
+.block-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-d); border: 1px solid var(--border-d); border-radius: 6px; overflow: hidden; }
+@media (max-width: 540px) { .block-grid { grid-template-columns: 1fr; } }
+.block-card { background: var(--dark); padding: 1.75rem 1.5rem; }
+.block-num { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+.block-name { font-family: var(--fd); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: .5rem; line-height: 1.15; }
+.block-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* COMPARE */
+.compare-section { background: var(--white); }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-l); border: 1px solid var(--border-l); border-radius: 6px; overflow: hidden; margin-top: 2rem; }
+@media (max-width: 540px) { .compare-grid { grid-template-columns: 1fr; } }
+.compare-col { background: var(--pure); padding: 1.75rem 1.5rem; }
+.compare-col.winner { background: #F9F7F2; }
+.compare-header { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1.25rem; padding-bottom: .75rem; border-bottom: 1px solid var(--border-l); color: var(--muted); }
+.compare-header.gold { color: var(--gold); }
+.compare-row { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; margin-bottom: .875rem; color: var(--muted); }
+.compare-row:last-child { margin-bottom: 0; }
+.compare-row .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.compare-row.good { color: var(--body); }
+.compare-row.good .icon { color: var(--gold); }
+.compare-row.bad .icon { color: #CCCCCC; }
+
+/* HOW IT WORKS */
+.how-section { background: #F0EDE6; }
+.steps { display: flex; flex-direction: column; margin-top: 2rem; position: relative; }
+.steps::before { content: ''; position: absolute; left: 18px; top: 28px; bottom: 28px; width: 1px; background: var(--border-l); }
+.step { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border-l); }
+.step:last-child { border-bottom: none; }
+.step-n { width: 36px; height: 36px; border-radius: 50%; background: var(--gold); color: var(--black); font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
+.step-body strong { display: block; font-size: 15px; font-weight: 600; color: var(--off-black); margin-bottom: .25rem; }
+.step-body p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* PROOF */
+.proof-section { background: var(--white); }
+.testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+@media (max-width: 540px) { .testi-grid { grid-template-columns: 1fr; } }
+.testi { background: var(--pure); border: 1px solid var(--border-l); border-radius: 6px; padding: 1.5rem; }
+.stars { color: var(--gold); font-size: 13px; letter-spacing: 3px; margin-bottom: .75rem; }
+.testi p { font-size: 14px; font-style: italic; line-height: 1.65; color: var(--body); margin-bottom: 1rem; }
+.testi-who { font-size: 13px; font-weight: 600; color: var(--off-black); }
+.stats { display: grid; grid-template-columns: repeat(4,1fr); gap: .875rem; margin-top: 2.5rem; }
+@media (max-width: 540px) { .stats { grid-template-columns: repeat(2,1fr); } }
+.stat { background: var(--pure); border: 1px solid var(--border-l); border-radius: 6px; padding: 1.25rem 1rem; text-align: center; }
+.stat-n { font-family: var(--fd); font-size: 30px; font-weight: 700; color: var(--off-black); line-height: 1; }
+.stat-l { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* FAQ */
+.faq-section { background: #F0EDE6; }
+.faq-list { margin-top: 2rem; }
+.faq-item { border-bottom: 1px solid var(--border-l); padding: 1.25rem 0; }
+.faq-item:first-child { border-top: 1px solid var(--border-l); }
+.faq-q { font-size: 15px; font-weight: 600; color: var(--off-black); display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
+.faq-q::before { content: 'Q'; font-size: 10px; font-weight: 700; letter-spacing: .06em; color: var(--gold); background: var(--gold-dim); padding: 2px 7px; border-radius: 2px; flex-shrink: 0; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.65; padding-left: 2.25rem; }
+
+/* CLOSE */
+.close-section { background: var(--black); padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
+.close-section::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 110%, rgba(201,168,76,0.08) 0%, transparent 65%); pointer-events: none; }
+.close-section h2 { margin-bottom: 1rem; }
+.close-section p { color: var(--muted); max-width: 420px; margin: 0 auto 2.25rem; line-height: 1.65; font-size: 16px; }
+.guarantee { display: inline-flex; align-items: flex-start; gap: 12px; border: 1px solid var(--border-d); border-radius: 4px; padding: 1rem 1.25rem; max-width: 440px; margin-top: 1.5rem; text-align: left; position: relative; z-index: 1; }
+.guarantee svg { flex-shrink: 0; margin-top: 1px; }
+.guarantee p { font-size: 13px; color: #555550; line-height: 1.55; margin: 0; }
+
+footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.04); padding: 1.5rem 2rem; text-align: center; }
+footer p { font-size: 12px; color: #333330; }
+footer a { color: #555550; text-decoration: none; }
+
+@media (max-width: 640px) {
+  nav { padding: .875rem 1.25rem; }
+  .hero { padding: 3.5rem 1.25rem 3rem; }
+  .wrap { padding: 3.5rem 1.25rem; }
+  .wrap-full { padding: 3.5rem 1.25rem; }
+  .close-section { padding: 4rem 1.25rem; }
+  .value-stack { padding: 1rem 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">The <span>Playbook</span></div>
+  <a href="#buy" class="nav-btn">Get Started</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tag">Coach Sangster · Online Coaching Program</div>
+  <h1>Build <em>real strength</em> around a busy schedule.</h1>
+  <p class="hero-sub">A rolling gym-based coaching program for dads who are ready to stop winging it and start building something that lasts.</p>
+  <div class="value-stack">
+    <div class="vs-label">How it compares</div>
+    <div class="vs-row">
+      <span>In-person personal training</span>
+      <span class="strike">$790-$1,140/mo</span>
+    </div>
+    <div class="vs-row">
+      <span>Online coaching</span>
+      <span class="strike">$200-$400/mo</span>
+    </div>
+    <div class="vs-divider"></div>
+    <div class="vs-total">
+      <span class="vs-total-label">The Playbook</span>
+      <span class="vs-total-price"><sup>$</sup>89<sub>CAD/mo</sub></span>
+    </div>
+  </div>
+  <a href="YOUR_STRIPE_LINK_HERE" class="btn-cta" id="buy">Get The Playbook Now</a>
+  <p class="hero-fine">Instant access · No contracts · Cancel anytime</p>
+</section>
+
+<!-- PROBLEM -->
+<section style="background:var(--white);">
+  <div class="wrap">
+    <span class="eyebrow">The problem</span>
+    <h2>You're not the problem. The lack of a system is.</h2>
+    <div class="rule"></div>
+    <p class="problem-intro">Most dads don't fall off because they're lazy. They fall off because they have no plan connecting the sessions, no goal on the horizon, and no reason to keep going. That's a structure problem, not a discipline problem.</p>
+    <div class="pain-grid">
+      <div class="pain-card"><p>You train hard when you show up but there's nothing connecting one session to the next.</p></div>
+      <div class="pain-card"><p>Work and family push training down the list. When you do make it, you're winging it.</p></div>
+      <div class="pain-card"><p>Fitness apps give you exercises. Not a program. Not a goal. Not a direction.</p></div>
+      <div class="pain-card"><p>Every restart feels like starting from zero because there was never a foundation to come back to.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLLING BLOCKS -->
+<section class="blocks-section wrap-full">
+  <div style="max-width:700px;margin:0 auto;">
+    <span class="eyebrow">How it works</span>
+    <h2 class="light">A new goal every 12 weeks. Always something to chase.</h2>
+    <div class="rule"></div>
+    <p class="blocks-intro">The Playbook runs in rolling 12-week blocks. Each block has a specific goal, a clear finish line, and programming built to get you there. Finish one, start the next. You always know where you are and what you're building toward.</p>
+    <div class="block-grid">
+      <div class="block-card">
+        <div class="block-num">Block 1</div>
+        <div class="block-name">Ground Work</div>
+        <div class="block-desc">Build the foundation. Compound lifts, linear progression, low reps. Every week the weight goes up. This is where the habit gets built.</div>
+      </div>
+      <div class="block-card">
+        <div class="block-num">Block 2</div>
+        <div class="block-name">The Build</div>
+        <div class="block-desc">Add size and volume. You're stronger now and the program reflects it. This is where the work starts to show.</div>
+      </div>
+      <div class="block-card">
+        <div class="block-num">Block 3</div>
+        <div class="block-name">Forge</div>
+        <div class="block-desc">Conditioning focus. Higher density, shorter rest, body composition shifts. This block separates the guys who showed up from the guys who committed.</div>
+      </div>
+      <div class="block-card">
+        <div class="block-num">Block 4</div>
+        <div class="block-name">The Summit</div>
+        <div class="block-desc">Peak intensity. Wave loading. Personal bests. After 36 weeks of work, this is where you find out exactly what you've built.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare-section">
+  <div class="wrap">
+    <span class="eyebrow">Why apps fall short</span>
+    <h2>A library of exercises is not a coaching program.</h2>
+    <div class="rule"></div>
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-header">Generic fitness apps</div>
+        <div class="compare-row bad"><span class="icon">✕</span><span>Random workouts with no connection between sessions</span></div>
+        <div class="compare-row bad"><span class="icon">✕</span><span>No progressive overload, no real strength gains</span></div>
+        <div class="compare-row bad"><span class="icon">✕</span><span>No goal, no finish line, no reason to stay</span></div>
+        <div class="compare-row bad"><span class="icon">✕</span><span>Built to keep you scrolling, not to get you results</span></div>
+        <div class="compare-row bad"><span class="icon">✕</span><span>You're still on your own to figure out what matters</span></div>
+      </div>
+      <div class="compare-col winner">
+        <div class="compare-header gold">The Playbook</div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Rolling 12-week blocks, every session building on the last</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Progressive overload built in, strength goes up week over week</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>A clear goal every block, always something to work toward</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Designed to produce a result, not engagement</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Open the app and follow the plan. Zero decisions required.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO START -->
+<section class="how-section">
+  <div class="wrap">
+    <span class="eyebrow">Getting started</span>
+    <h2>You could be training tonight.</h2>
+    <div class="rule"></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <strong>Click the button and check out</strong>
+          <p>60 seconds. No calls, no waitlists. Pay and you're in immediately.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <strong>Check your email</strong>
+          <p>Your welcome email arrives instantly with your TrainHeroic invite and everything you need to get going.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <strong>Download TrainHeroic and open your program</strong>
+          <p>Free app. Your full block is loaded and waiting. Day 1 is already built. Just show up.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-body">
+          <strong>Train. Log. Progress.</strong>
+          <p>Follow the program. Log your weights. Finish the block. Start the next one stronger.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof-section">
+  <div class="wrap">
+    <span class="eyebrow">Real results</span>
+    <h2>From guys who stopped winging it.</h2>
+    <div class="rule"></div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"I thought I knew a lot going in. The gap between what I knew and what I actually learned was bigger than I expected. Structure, form, diet. And the whole process from signing up to hitting the gym was smoother than I expected."</p>
+        <div class="testi-who">Dillon G.</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"I spent a lot of time thinking about what I wanted to achieve but couldn't translate that into consistent action. Since working with William I've hit PRs I never thought possible and that progress built a level of confidence that carries into everything else I do. Stop overthinking it. He handles all the planning. You just show up and work hard."</p>
+        <div class="testi-who">Jason T.</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"Before working with William I was dealing with shoulder and knee pain that had kept me away from activities I used to enjoy. Following his programming, the majority of that pain is gone. His knowledge of body mechanics goes far beyond anyone else at the gym. Intentional, educated training at a level that would supplement a therapist's recommendations."</p>
+        <div class="testi-who">Mark W.</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"The thing that surprised me most was the confidence. Knowing my form and technique were solid made me trust my training in a way I never had before."</p>
+        <div class="testi-who">Ethan</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"I'd been working out for years doing the same upper body routine and relying on cycling for my legs. Since working with William my overall strength and flexibility has greatly improved. I'm not hesitant lifting heavy anymore because of the core strength I've built. If you've hit a plateau or you're just starting out, having a coach saves you time. The attention to detail makes a bigger difference than I expected."</p>
+        <div class="testi-who">Gerrard</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">Years coaching</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Block system</div></div>
+      <div class="stat"><div class="stat-n">$89</div><div class="stat-l">CAD per month</div></div>
+      <div class="stat"><div class="stat-n">0</div><div class="stat-l">Guesswork</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h2>Common questions.</h2>
+    <div class="rule"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Do I need a gym membership?</p>
+        <p class="faq-a">Yes. The Playbook is a gym-based strength program. You'll need access to a barbell, dumbbells, and standard gym equipment. That's what the programming is built around.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What experience level is this for?</p>
+        <p class="faq-a">Beginner to intermediate. If you've been training inconsistently and want a real program to follow, this is built for you. Completely new to lifting? Reach out first and we'll point you in the right direction.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">How many days per week do I need?</p>
+        <p class="faq-a">3 primary sessions per week with 2 optional bonus days. Each session runs 45 to 60 minutes. Built around a full schedule, not a free one.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What is TrainHeroic?</p>
+        <p class="faq-a">It's the free app your program is delivered through. Every session is loaded with exercises, sets, reps, rest periods, and video demos. Download it, open your program, and go.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">When can I start?</p>
+        <p class="faq-a">Right now. The Playbook runs on open enrollment, meaning there are no start dates to wait for. You join, get access immediately, and begin where the current block is at. Your welcome email will tell you exactly where you're jumping in and what to expect.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What if I join mid-block?</p>
+        <p class="faq-a">No problem. You start where the current team is and build from there. The programming is designed so you can enter at any point and still make progress. A new block starts every 12 weeks so you'll hit a clean entry point soon enough regardless.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">What happens after the first 12 weeks?</p>
+        <p class="faq-a">You move into the next block. Ground Work builds into The Build, then Forge, then The Summit. Each block has a new goal and new programming. You're always chasing something and never starting from scratch.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q">Can I cancel anytime?</p>
+        <p class="faq-a">Yes. No contracts, no lock-ins. Cancel directly through your account whenever you want. Most people stay because the program keeps giving them something to work toward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="close-section">
+  <h2 class="light">Stop winging it.<br><em>Build something real.</em></h2>
+  <p>A rolling coaching program with a new goal every 12 weeks. $89 CAD/month. Cancel anytime.</p>
+  <a href="YOUR_STRIPE_LINK_HERE" class="btn-cta">Get The Playbook Now</a>
+  <br>
+  <div class="guarantee">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </svg>
+    <p>Built by a coach with 5 years of experience and 19 years under the bar. Follow the program with real effort and don't see results, reach out directly. That's the commitment.</p>
+  </div>
+</section>
+
+<footer>
+  <p>2026 Coach Sangster &nbsp;·&nbsp; <a href="mailto:your@email.com">Contact</a></p>
+</footer>
+
+</body>
+</html>
