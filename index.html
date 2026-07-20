@@ -211,6 +211,7 @@ footer a { color: #555550; text-decoration: none; }
   .wrap-full { padding: 3.5rem 1.25rem; }
   .close-section { padding: 4rem 1.25rem; }
   .value-stack { padding: 1rem 1.25rem; }
+  .community-grid { grid-template-columns: 1fr !important; }
 }
 
 .jump-nav {
@@ -226,21 +227,23 @@ footer a { color: #555550; text-decoration: none; }
   position: sticky;
   top: 53px;
   z-index: 99;
+  height: 40px;
 }
 .jump-nav::-webkit-scrollbar { display: none; }
 .jump-nav a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: .03em;
   color: var(--muted);
   text-decoration: none;
-  padding: .4rem .75rem;
+  padding: 0 .75rem;
+  height: 26px;
   border-radius: 20px;
   white-space: nowrap;
   flex-shrink: 0;
   transition: background .15s, color .15s;
-  margin: .35rem 0;
 }
 .jump-nav a:hover { background: var(--gold-dim); color: var(--off-black); }
 .jump-nav a.active { background: var(--gold-dim); color: var(--off-black); font-weight: 600; }
@@ -268,7 +271,8 @@ footer a { color: #555550; text-decoration: none; }
   <a href="#section-program">The Program</a>
   <a href="#section-blocks">The Blocks</a>
   <a href="#section-how">How It Works</a>
-  <a href="#section-results">Results</a>
+  <a href="#section-results">Reviews</a>
+  <a href="#section-community">The Unit</a>
   <a href="#section-faq">FAQ</a>
   <a href="#section-guarantee">Guarantee</a>
   <a href="#buy" class="nav-buy">Get Started</a>
@@ -297,6 +301,24 @@ footer a { color: #555550; text-decoration: none; }
   </div>
   <a href="https://buy.stripe.com/9B6eVdceGg0wgS3ewjaAw02" class="btn-cta" id="buy">Get The Playbook Now</a>
   <p class="hero-fine">Instant access · No contracts · Cancel anytime</p>
+</section>
+
+<!-- CHALLENGE -->
+<section style="background:#F0EDE6;border-bottom:1px solid var(--border-l);">
+  <div class="wrap" style="padding:2.5rem 2rem;">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+      <div style="flex:1;min-width:240px;">
+        <span class="eyebrow">Not ready to commit?</span>
+        <h2 style="font-size:clamp(20px,3vw,28px);margin-bottom:.5rem;">Start with the Ground Work Challenge</h2>
+        <p style="font-size:15px;color:var(--muted);line-height:1.65;">28 days. 3 sessions a week. See what you can build. A lower-commitment entry point at a fraction of the price -- and if you complete it, you unlock a discount on the full Playbook subscription.</p>
+      </div>
+      <div style="text-align:center;flex-shrink:0;">
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;color:var(--off-black);line-height:1;"><sup style="font-size:18px;color:var(--gold);">$</sup>49</div>
+        <div style="font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem;">CAD one time</div>
+        <a href="YOUR_CHALLENGE_LINK_HERE" style="display:inline-block;background:var(--off-black);color:var(--white);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:12px 28px;border-radius:3px;text-decoration:none;">Start the Challenge</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- PROBLEM -->
@@ -392,13 +414,13 @@ footer a { color: #555550; text-decoration: none; }
         <div class="step-n">2</div>
         <div class="step-body">
           <strong>Check your email</strong>
-          <p>Your welcome email arrives instantly with your TrainHeroic invite and everything you need to get going.</p>
+          <p>Your welcome email arrives instantly with your Everfit invite and everything you need to get going.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n">3</div>
         <div class="step-body">
-          <strong>Download TrainHeroic and open your program</strong>
+          <strong>Download Everfit and open your program</strong>
           <p>Free app. Your full block is loaded and waiting. Day 1 is already built. Just show up.</p>
         </div>
       </div>
@@ -416,7 +438,7 @@ footer a { color: #555550; text-decoration: none; }
 <!-- PROOF -->
 <section id="section-results" class="proof-section">
   <div class="wrap">
-    <span class="eyebrow">Real results</span>
+    <span class="eyebrow">Client reviews</span>
     <h2>From guys who stopped winging it.</h2>
     <div class="rule"></div>
     <div class="testi-grid">
@@ -455,6 +477,31 @@ footer a { color: #555550; text-decoration: none; }
   </div>
 </section>
 
+<!-- COMMUNITY -->
+<section id="section-community" style="background:var(--off-black);">
+  <div class="wrap">
+    <span class="eyebrow">The community</span>
+    <h2 class="light">You are not training alone.</h2>
+    <div class="rule"></div>
+    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:2rem;">The Playbook runs inside Everfit, which gives every member access to The Unit -- a shared feed where dads in the program log sessions, post numbers, and keep each other accountable. No social media noise. No scrolling. Just the guys who are in it with you.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:2rem;">
+      <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border-d);border-radius:6px;padding:1.25rem;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">Weekly coach post</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">Every week William posts a session prompt in the feed. Log your numbers. See what everyone else is lifting. That is accountability without a group chat.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border-d);border-radius:6px;padding:1.25rem;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">Block milestones</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">At the end of every 12-week block, every man who finished gets recognised by name. You will want to be on that list.</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border-d);border-radius:6px;padding:1.25rem;">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">No babysitting</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">This is not a community that needs moderation. It is men logging work. The culture takes care of itself.</p>
+      </div>
+    </div>
+    <p style="font-size:14px;color:#444440;font-style:italic;line-height:1.6;">Men with community accountability in their training are 20-35% less likely to quit. The Unit is not a bonus feature. It is part of why this works.</p>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="section-faq" class="faq-section">
   <div class="wrap">
@@ -475,8 +522,8 @@ footer a { color: #555550; text-decoration: none; }
         <p class="faq-a">3 primary sessions per week with 2 optional bonus days. Each session runs 45 to 60 minutes. Built around a full schedule, not a free one.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q">What is TrainHeroic?</p>
-        <p class="faq-a">It's the free app your program is delivered through. Every session is loaded with exercises, sets, reps, rest periods, and video demos. Download it, open your program, and go.</p>
+        <p class="faq-q">What is Everfit?</p>
+        <p class="faq-a">Everfit is the free app your program is delivered through. Every session is loaded with exercises, sets, reps, rest periods, and video demos. It also connects you to The Unit -- the community of men in the program. Download it, open your program, and go.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">When can I start?</p>
@@ -544,7 +591,7 @@ footer a { color: #555550; text-decoration: none; }
 <script>
 (function() {
   const links = document.querySelectorAll('.jump-nav a');
-  const sections = ['section-program','section-blocks','section-how','section-results','section-faq','section-guarantee','buy'].map(id => document.getElementById(id)).filter(Boolean);
+  const sections = ['section-program','section-blocks','section-how','section-results','section-community','section-faq','section-guarantee','buy'].map(id => document.getElementById(id)).filter(Boolean);
   function onScroll() {
     let current = '';
     sections.forEach(sec => {
