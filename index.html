@@ -118,6 +118,17 @@ nav {
 .btn-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
 .hero-fine { margin-top: .875rem; font-size: 12px; color: #444440; letter-spacing: .06em; text-transform: uppercase; position: relative; z-index: 1; }
 
+/* LAYOUT FIXES */
+h1, h2 { text-wrap: balance; }
+p { text-wrap: pretty; }
+.hero h1 em, h2 em, .ln { display: block; }
+.value-stack { display: flex !important; margin: 0 auto 2.25rem !important; }
+.hero-cta { display: block; }
+@media (max-width: 640px) {
+  .two-col, .community-grid { grid-template-columns: 1fr !important; }
+  .challenge-price { width: 100%; }
+}
+
 /* SHARED */
 .wrap { max-width: 700px; margin: 0 auto; padding: 5rem 2rem; }
 .wrap-full { padding: 5rem 2rem; }
@@ -299,7 +310,7 @@ footer a { color: #555550; text-decoration: none; }
       <span class="vs-total-price"><sup>$</sup>62<sub>CAD/mo</sub></span>
     </div>
   </div>
-  <a href="https://www.relayathletic.com/c/coachsangster/checkout/e10178e9-72b4-46cb-9c00-fc4bfa2768ad" class="btn-cta" id="buy">Claim a Founding Spot</a>
+  <div class="hero-cta"><a href="https://www.relayathletic.com/c/coachsangster/checkout/e10178e9-72b4-46cb-9c00-fc4bfa2768ad" class="btn-cta" id="buy">Claim a Founding Spot</a></div>
   <p class="hero-fine">25 founding spots · $89 from January 1 · Founding rate locked for as long as you stay · Cancel anytime</p>
 </section>
 
@@ -308,11 +319,11 @@ footer a { color: #555550; text-decoration: none; }
   <div class="wrap" style="padding:2.5rem 2rem;">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
       <div style="flex:1;min-width:240px;">
-        <span class="eyebrow">Not ready to commit?</span>
+        <span class="eyebrow">Want to try it first?</span>
         <h2 style="font-size:clamp(20px,3vw,28px);margin-bottom:.5rem;">Start with the Ground Work Challenge</h2>
         <p style="font-size:15px;color:var(--muted);line-height:1.65;">28 days. Three strength days plus two bonus days a week. Two weeks to find your real numbers, two weeks to start building on them. One payment, no subscription.</p>
       </div>
-      <div style="text-align:center;flex-shrink:0;">
+      <div class="challenge-price" style="text-align:center;flex-shrink:0;">
         <div style="font-family:'Playfair Display',Georgia,serif;font-size:36px;font-weight:700;color:var(--off-black);line-height:1;"><sup style="font-size:18px;color:var(--gold);">$</sup>49</div>
         <div style="font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem;">CAD one time</div>
         <a href="https://www.relayathletic.com/c/coachsangster/checkout/0f014f68-442e-43e3-9ba1-87aee75c808c" style="display:inline-block;background:var(--off-black);color:var(--white);font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:12px 28px;border-radius:3px;text-decoration:none;">Start the Challenge</a>
@@ -324,15 +335,15 @@ footer a { color: #555550; text-decoration: none; }
 <!-- PROBLEM -->
 <section id="section-program" style="background:var(--white);">
   <div class="wrap">
-    <span class="eyebrow">The problem</span>
-    <h2>You're not the problem. The lack of a system is.</h2>
+    <span class="eyebrow">Why progress stalls</span>
+    <h2><span class="ln">You've put in the work.</span><span class="ln">The plan just never kept up.</span></h2>
     <div class="rule"></div>
-    <p class="problem-intro">Most dads don't fall off because they're lazy. They fall off because they have no plan connecting the sessions, no goal on the horizon, and no reason to keep going. That's a structure problem, not a discipline problem.</p>
+    <p class="problem-intro">Most dads who lift aren't short on effort. They've been training for years. What changed is everything around it: less time, more on the plate, and a routine that stopped moving forward. Strength stalls when the plan stops progressing, not when you stop caring.</p>
     <div class="pain-grid">
-      <div class="pain-card"><p>You train hard when you show up but there's nothing connecting one session to the next.</p></div>
-      <div class="pain-card"><p>Work and family push training down the list. When you do make it, you're winging it.</p></div>
-      <div class="pain-card"><p>Fitness apps give you exercises. Not a program. Not a goal. Not a direction.</p></div>
-      <div class="pain-card"><p>Every restart feels like starting from zero because there was never a foundation to come back to.</p></div>
+      <div class="pain-card"><p>You still show up and work hard, but the numbers have looked the same for a while.</p></div>
+      <div class="pain-card"><p>Work and family set your schedule now. Your training should be built around that, not fighting it.</p></div>
+      <div class="pain-card"><p>Apps hand you workouts. You want a plan with a direction and a finish line.</p></div>
+      <div class="pain-card"><p>You know how to train. You'd rather someone else handle the planning so you can just lift.</p></div>
     </div>
   </div>
 </section>
@@ -340,30 +351,30 @@ footer a { color: #555550; text-decoration: none; }
 <!-- ROLLING BLOCKS -->
 <section id="section-blocks" class="blocks-section wrap-full">
   <div style="max-width:700px;margin:0 auto;">
-    <span class="eyebrow">How it works</span>
-    <h2 class="light">A new goal every 12 weeks. Always something to chase.</h2>
+    <span class="eyebrow">The program</span>
+    <h2 class="light"><span class="ln">A clear goal every block.</span><span class="ln">Always something to build toward.</span></h2>
     <div class="rule"></div>
-    <p class="blocks-intro">The Playbook runs in rolling 12-week blocks. Each block has a specific goal, a clear finish line, and programming built to get you there. Finish one, start the next. You always know where you are and what you're building toward.</p>
+    <p class="blocks-intro">The Playbook runs in rolling blocks. Each one has a specific goal, a finish line and programming built to get you there. Finish one and start the next stronger. Your numbers carry forward, so nothing you build is lost.</p>
     <div class="block-grid">
       <div class="block-card">
         <div class="block-num">Block 1</div>
         <div class="block-name">Ground Work</div>
-        <div class="block-desc">Build the foundation. Compound lifts, linear progression, low reps. Every week the weight goes up. This is where the habit gets built.</div>
+        <div class="block-desc">Set your real numbers and build on them. Compound lifts and steady progression, with the weight climbing week to week. The base everything else stands on.</div>
       </div>
       <div class="block-card">
         <div class="block-num">Block 2</div>
         <div class="block-name">The Build</div>
-        <div class="block-desc">Add size and volume. You're stronger now and the program reflects it. This is where the work starts to show.</div>
+        <div class="block-desc">More size and more volume. You're stronger now and the program grows with you. This is where the work starts to show.</div>
       </div>
       <div class="block-card">
         <div class="block-num">Block 3</div>
         <div class="block-name">Forge</div>
-        <div class="block-desc">Conditioning focus. Higher density, shorter rest, body composition shifts. This block separates the guys who showed up from the guys who committed.</div>
+        <div class="block-desc">Conditioning and density. Shorter rest and better work capacity, so you move as well as you lift.</div>
       </div>
       <div class="block-card">
         <div class="block-num">Block 4</div>
         <div class="block-name">The Summit</div>
-        <div class="block-desc">Peak intensity. Wave loading. Personal bests. After 36 weeks of work, this is where you find out exactly what you've built.</div>
+        <div class="block-desc">Peak strength. Wave loading and personal bests. This is where you see what the year has built.</div>
       </div>
     </div>
   </div>
@@ -372,8 +383,8 @@ footer a { color: #555550; text-decoration: none; }
 <!-- COMPARE -->
 <section class="compare-section">
   <div class="wrap">
-    <span class="eyebrow">Why apps fall short</span>
-    <h2>A library of exercises is not a coaching program.</h2>
+    <span class="eyebrow">Why a plan matters</span>
+    <h2><span class="ln">Workouts are easy to find.</span><span class="ln">A plan is not.</span></h2>
     <div class="rule"></div>
     <div class="compare-grid">
       <div class="compare-col">
@@ -381,16 +392,16 @@ footer a { color: #555550; text-decoration: none; }
         <div class="compare-row bad"><span class="icon">✕</span><span>Random workouts with no connection between sessions</span></div>
         <div class="compare-row bad"><span class="icon">✕</span><span>No progressive overload, no real strength gains</span></div>
         <div class="compare-row bad"><span class="icon">✕</span><span>No goal, no finish line, no reason to stay</span></div>
-        <div class="compare-row bad"><span class="icon">✕</span><span>Built to keep you scrolling, not to get you results</span></div>
-        <div class="compare-row bad"><span class="icon">✕</span><span>You're still on your own to figure out what matters</span></div>
+        <div class="compare-row bad"><span class="icon">✕</span><span>Built to keep you scrolling, not to move your numbers</span></div>
+        <div class="compare-row bad"><span class="icon">✕</span><span>You're still the one deciding what comes next</span></div>
       </div>
       <div class="compare-col winner">
         <div class="compare-header gold">The Playbook</div>
-        <div class="compare-row good"><span class="icon">✓</span><span>Rolling 12-week blocks, every session building on the last</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Rolling blocks, every session building on the last</span></div>
         <div class="compare-row good"><span class="icon">✓</span><span>Progressive overload built in, strength goes up week over week</span></div>
         <div class="compare-row good"><span class="icon">✓</span><span>A clear goal every block, always something to work toward</span></div>
-        <div class="compare-row good"><span class="icon">✓</span><span>Designed to produce a result, not engagement</span></div>
-        <div class="compare-row good"><span class="icon">✓</span><span>Open the app and follow the plan. Zero decisions required.</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Designed to produce a result, not screen time</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Open the app and lift. The planning is handled.</span></div>
       </div>
     </div>
   </div>
@@ -421,14 +432,14 @@ footer a { color: #555550; text-decoration: none; }
         <div class="step-n">3</div>
         <div class="step-body">
           <strong>Download Relay Athletic and enter your code</strong>
-          <p>Free app on iPhone and Android. Your program is loaded and waiting. Day 1 is already built. Just show up.</p>
+          <p>Free app on iPhone and Android. Your program is loaded and Day 1 is ready when you are.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-n">4</div>
         <div class="step-body">
           <strong>Train. Log. Progress.</strong>
-          <p>Follow the program. Log your weights. Finish the block. Start the next one stronger.</p>
+          <p>Follow the program and log your weights. Finish the block and start the next one stronger.</p>
         </div>
       </div>
     </div>
@@ -439,7 +450,7 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-results" class="proof-section">
   <div class="wrap">
     <span class="eyebrow">Client reviews</span>
-    <h2>From guys who stopped winging it.</h2>
+    <h2><span class="ln">Men who knew how to train.</span><span class="ln">Here's what changed.</span></h2>
     <div class="rule"></div>
     <div class="testi-grid">
       <div class="testi">
@@ -470,9 +481,9 @@ footer a { color: #555550; text-decoration: none; }
     </div>
     <div class="stats">
       <div class="stat"><div class="stat-n">5</div><div class="stat-l">Years coaching</div></div>
-      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Block system</div></div>
+      <div class="stat"><div class="stat-n">19</div><div class="stat-l">Years under the bar</div></div>
       <div class="stat"><div class="stat-n">25</div><div class="stat-l">Founding spots</div></div>
-      <div class="stat"><div class="stat-n">0</div><div class="stat-l">Guesswork</div></div>
+      <div class="stat"><div class="stat-n">3</div><div class="stat-l">Strength days a week</div></div>
     </div>
   </div>
 </section>
@@ -481,24 +492,24 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-community" style="background:var(--off-black);">
   <div class="wrap">
     <span class="eyebrow">The community</span>
-    <h2 class="light">You are not training alone.</h2>
+    <h2 class="light"><span class="ln">Train alongside men</span><span class="ln">who get it.</span></h2>
     <div class="rule"></div>
-    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:2rem;">Every member gets access to The Unit, a private group where dads in the program log sessions, post numbers, and keep each other accountable. No social media noise. No scrolling. Just the guys who are in it with you.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:2rem;">
+    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:2rem;">Every member gets access to The Unit, a private group where dads in the program log sessions, post numbers and back each other up. No social media noise. Just the men who are in it with you.</p>
+    <div class="community-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:2rem;">
       <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border-d);border-radius:6px;padding:1.25rem;">
         <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">Weekly coach post</div>
-        <p style="font-size:14px;color:var(--muted);line-height:1.6;">Every week William posts a session prompt in the feed. Log your numbers. See what everyone else is lifting. That is accountability without a group chat.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">Every week William posts a session prompt. Log your numbers and see what everyone else is lifting. Accountability without the noise.</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border-d);border-radius:6px;padding:1.25rem;">
         <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">Block milestones</div>
-        <p style="font-size:14px;color:var(--muted);line-height:1.6;">At the end of every 12-week block, every man who finished gets recognised by name. You will want to be on that list.</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">At the end of every block, every man who finished gets recognised by name.</p>
       </div>
       <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border-d);border-radius:6px;padding:1.25rem;">
-        <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">No babysitting</div>
-        <p style="font-size:14px;color:var(--muted);line-height:1.6;">This is not a community that needs moderation. It is men logging work. The culture takes care of itself.</p>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">Quiet and focused</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.6;">No feed to keep up with and no one performing. Men logging work and backing each other up.</p>
       </div>
     </div>
-    <p style="font-size:14px;color:#444440;font-style:italic;line-height:1.6;">Men with community accountability in their training are 20-35% less likely to quit. The Unit is not a bonus feature. It is part of why this works.</p>
+    <p style="font-size:14px;color:#6a6a64;font-style:italic;line-height:1.6;">The Unit is not a bonus feature. It is part of why the work sticks.</p>
   </div>
 </section>
 
@@ -515,7 +526,7 @@ footer a { color: #555550; text-decoration: none; }
       </div>
       <div class="faq-item">
         <p class="faq-q">What experience level is this for?</p>
-        <p class="faq-a">Beginner to intermediate. If you've been training inconsistently and want a real program to follow, this is built for you. Completely new to lifting? Reach out first and we'll point you in the right direction.</p>
+        <p class="faq-a">Men who have trained before and want a plan that makes the work add up. Whether you've lifted for two years or twenty, the program meets you at your own numbers. Brand new to lifting? Reach out first and I'll point you in the right direction.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">How many days per week do I need?</p>
@@ -535,7 +546,7 @@ footer a { color: #555550; text-decoration: none; }
       </div>
       <div class="faq-item">
         <p class="faq-q">What happens after Ground Work?</p>
-        <p class="faq-a">You move into the next block. Ground Work builds into The Build, then Forge, then The Summit. Each block has a new goal and new programming. You're always chasing something and never starting from scratch.</p>
+        <p class="faq-a">You move into the next block. Ground Work builds into The Build, then Forge, then The Summit. Each block has a new goal and new programming. Your numbers carry forward, so you never start from scratch.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q">Can I cancel anytime?</p>
@@ -549,14 +560,14 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-guarantee" style="background:var(--off-black);">
   <div class="wrap">
     <span class="eyebrow">The guarantee</span>
-    <h2 class="light">The Show Me the Work Guarantee</h2>
+    <h2 class="light">The Show Me the Work Guarantee.</h2>
     <div class="rule"></div>
     <div style="border-left:3px solid var(--gold);padding:1.25rem 1.5rem;background:rgba(255,255,255,0.04);border-radius:0 6px 6px 0;margin-bottom:1.5rem;">
       <p style="font-size:17px;color:var(--white);line-height:1.7;margin-bottom:.75rem;">Complete 12 sessions in your first 30 days, 3 per week, logged inside the app. If you are not satisfied with the program, reach out before day 30 and we will refund your first month in full.</p>
       <p style="font-size:15px;color:var(--muted);line-height:1.65;font-style:italic;">No hoops. No guilt. Just proof that you showed up.</p>
     </div>
-    <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:2rem;">We are not worried about this guarantee. The men in the unit who show up 3 times a week for a month do not want to leave. They want to know what comes next.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <p style="font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:2rem;">Men who train 3 times a week for a month don't usually want to leave. They want to know what comes next.</p>
+    <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
       <div style="background:rgba(255,255,255,0.04);border:0.5px solid var(--border-d);border-radius:6px;padding:1.25rem 1.5rem;">
         <div style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;">What qualifies</div>
         <p style="font-size:14px;color:var(--muted);line-height:1.6;">12 sessions logged in the Relay Athletic app within 30 days of purchase. Request submitted before day 30. First-time subscribers only.</p>
@@ -572,10 +583,10 @@ footer a { color: #555550; text-decoration: none; }
 
 <!-- CLOSE -->
 <section class="close-section">
-  <h2 class="light">Stop winging it.<br><em>Build something real.</em></h2>
+  <h2 class="light">The effort is already there.<em>Now give it a plan.</em></h2>
   <p>25 founding spots at $62 CAD a month, locked in for as long as you stay. $89 from January 1. Cancel anytime.</p>
   <a href="https://www.relayathletic.com/c/coachsangster/checkout/e10178e9-72b4-46cb-9c00-fc4bfa2768ad" class="btn-cta">Claim a Founding Spot</a>
-  <br>
+  <div style="height:0"></div>
   <div class="guarantee">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
