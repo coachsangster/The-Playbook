@@ -77,8 +77,13 @@ nav {
 .hero h1 em { color: var(--gold); font-style: italic; }
 .hero-sub {
   font-size: 17px; color: var(--muted);
-  max-width: 500px; margin: 0 auto 2rem;
+  max-width: 500px; margin: 0 auto 1rem;
   line-height: 1.65;
+}
+.hero-tagline {
+  font-family: var(--fd); font-style: italic; font-weight: 700;
+  font-size: 19px; color: var(--gold); white-space: nowrap;
+  margin: 0 auto 2rem;
 }
 .value-stack {
   display: inline-flex; flex-direction: column; align-items: flex-start;
@@ -292,8 +297,9 @@ footer a { color: #555550; text-decoration: none; }
 <!-- HERO -->
 <section class="hero">
   <div class="tag">Coach Sangster · Online Coaching Program</div>
-  <h1>It was never your effort. <em>It was the plan.</em></h1>
-  <p class="hero-sub">Strong for them. Strong for decades. A rolling gym-based strength program for dads who want to build something that lasts.</p>
+  <h1><span class="ln">It was never your effort</span><em>It was the plan</em></h1>
+  <p class="hero-sub">A rolling gym-based strength program for dads who want to build something that lasts.</p>
+  <p class="hero-tagline">Strong for them · Strong for decades</p>
   <div class="value-stack">
     <div class="vs-label">How it compares</div>
     <div class="vs-row">
@@ -336,14 +342,14 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-program" style="background:var(--white);">
   <div class="wrap">
     <span class="eyebrow">Why progress stalls</span>
-    <h2><span class="ln">You've put in the work.</span><span class="ln">The plan just never kept up.</span></h2>
+    <h2><span class="ln">You've put in the work</span><span class="ln">The plan just never kept up</span></h2>
     <div class="rule"></div>
     <p class="problem-intro">Most dads who lift aren't short on effort. They've been training for years. What changed is everything around it: less time, more on the plate, and a routine that stopped moving forward. Strength stalls when the plan stops progressing, not when you stop caring.</p>
     <div class="pain-grid">
       <div class="pain-card"><p>You still show up and work hard, but the numbers have looked the same for a while.</p></div>
       <div class="pain-card"><p>Work and family set your schedule now. Your training should be built around that, not fighting it.</p></div>
       <div class="pain-card"><p>Apps hand you workouts. You want a plan with a direction and a finish line.</p></div>
-      <div class="pain-card"><p>You know how to train. You'd rather someone else handle the planning so you can just lift.</p></div>
+      <div class="pain-card"><p>You know how to train. You'd rather someone else write the plan so you can just lift.</p></div>
     </div>
   </div>
 </section>
@@ -352,7 +358,7 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-blocks" class="blocks-section wrap-full">
   <div style="max-width:700px;margin:0 auto;">
     <span class="eyebrow">The program</span>
-    <h2 class="light"><span class="ln">A clear goal every block.</span><span class="ln">Always something to build toward.</span></h2>
+    <h2 class="light"><span class="ln">A clear goal every block</span><span class="ln">Always something to build toward</span></h2>
     <div class="rule"></div>
     <p class="blocks-intro">The Playbook runs in rolling blocks. Each one has a specific goal, a finish line and programming built to get you there. Finish one and start the next stronger. Your numbers carry forward, so nothing you build is lost.</p>
     <div class="block-grid">
@@ -384,7 +390,7 @@ footer a { color: #555550; text-decoration: none; }
 <section class="compare-section">
   <div class="wrap">
     <span class="eyebrow">Why a plan matters</span>
-    <h2><span class="ln">Workouts are easy to find.</span><span class="ln">A plan is not.</span></h2>
+    <h2>A plan makes every session count</h2>
     <div class="rule"></div>
     <div class="compare-grid">
       <div class="compare-col">
@@ -397,11 +403,11 @@ footer a { color: #555550; text-decoration: none; }
       </div>
       <div class="compare-col winner">
         <div class="compare-header gold">The Playbook</div>
-        <div class="compare-row good"><span class="icon">✓</span><span>Rolling blocks, every session building on the last</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Every session builds on the one before it</span></div>
         <div class="compare-row good"><span class="icon">✓</span><span>Progressive overload built in, strength goes up week over week</span></div>
         <div class="compare-row good"><span class="icon">✓</span><span>A clear goal every block, always something to work toward</span></div>
         <div class="compare-row good"><span class="icon">✓</span><span>Designed to produce a result, not screen time</span></div>
-        <div class="compare-row good"><span class="icon">✓</span><span>Open the app and lift. The planning is handled.</span></div>
+        <div class="compare-row good"><span class="icon">✓</span><span>Open the app and lift. The plan is ready.</span></div>
       </div>
     </div>
   </div>
@@ -411,7 +417,7 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-how" class="how-section">
   <div class="wrap">
     <span class="eyebrow">Getting started</span>
-    <h2>You could be training tonight.</h2>
+    <h2>You could be training tonight</h2>
     <div class="rule"></div>
     <div class="steps">
       <div class="step">
@@ -450,7 +456,7 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-results" class="proof-section">
   <div class="wrap">
     <span class="eyebrow">Client reviews</span>
-    <h2><span class="ln">Men who knew how to train.</span><span class="ln">Here's what changed.</span></h2>
+    <h2><span class="ln">Men who knew how to train</span><span class="ln">Here's what changed</span></h2>
     <div class="rule"></div>
     <div class="testi-grid">
       <div class="testi">
@@ -492,7 +498,7 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-community" style="background:var(--off-black);">
   <div class="wrap">
     <span class="eyebrow">The community</span>
-    <h2 class="light"><span class="ln">Train alongside men</span><span class="ln">who get it.</span></h2>
+    <h2 class="light">Train alongside men who get it</h2>
     <div class="rule"></div>
     <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:2rem;">Every member gets access to The Unit, a private group where dads in the program log sessions, post numbers and back each other up. No social media noise. Just the men who are in it with you.</p>
     <div class="community-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:2rem;">
@@ -517,7 +523,7 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-faq" class="faq-section">
   <div class="wrap">
     <span class="eyebrow">FAQ</span>
-    <h2>Common questions.</h2>
+    <h2>Common questions</h2>
     <div class="rule"></div>
     <div class="faq-list">
       <div class="faq-item">
@@ -560,7 +566,7 @@ footer a { color: #555550; text-decoration: none; }
 <section id="section-guarantee" style="background:var(--off-black);">
   <div class="wrap">
     <span class="eyebrow">The guarantee</span>
-    <h2 class="light">The Show Me the Work Guarantee.</h2>
+    <h2 class="light">The Show Me the Work Guarantee</h2>
     <div class="rule"></div>
     <div style="border-left:3px solid var(--gold);padding:1.25rem 1.5rem;background:rgba(255,255,255,0.04);border-radius:0 6px 6px 0;margin-bottom:1.5rem;">
       <p style="font-size:17px;color:var(--white);line-height:1.7;margin-bottom:.75rem;">Complete 12 sessions in your first 30 days, 3 per week, logged inside the app. If you are not satisfied with the program, reach out before day 30 and we will refund your first month in full.</p>
@@ -583,7 +589,7 @@ footer a { color: #555550; text-decoration: none; }
 
 <!-- CLOSE -->
 <section class="close-section">
-  <h2 class="light">The effort is already there.<em>Now give it a plan.</em></h2>
+  <h2 class="light"><span class="ln">The effort is already there</span><em>Now give it a plan</em></h2>
   <p>25 founding spots at $62 CAD a month, locked in for as long as you stay. $89 from January 1. Cancel anytime.</p>
   <a href="https://www.relayathletic.com/c/coachsangster/checkout/e10178e9-72b4-46cb-9c00-fc4bfa2768ad" class="btn-cta">Claim a Founding Spot</a>
   <div style="height:0"></div>
