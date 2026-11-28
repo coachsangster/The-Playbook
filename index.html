@@ -300,6 +300,16 @@ footer a { color: #555550; text-decoration: none; }
 .sticky-cta a{background:var(--gold);color:var(--off-black,#1A1A18);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:.8rem 1rem;border-radius:3px;text-decoration:none;white-space:nowrap}
 footer{padding-bottom:5rem}
 @media(min-width:900px){.sticky-cta{display:none}}
+
+/* Readability pass: every text colour meets WCAG AA contrast */
+:root{--muted:#5E5D57}
+.hero,.proof-strip,.blocks-section,#section-community,#section-guarantee,.close-section,footer,.sticky-cta{--muted:#A8A49A}
+:is(#section-program,.same-lifts,.compare-section,.how-section,.proof-section,.faq-section,section[style*="F0EDE6"]) :is(.eyebrow,.compare-header.gold,.icon,.stars,h2 em,sup){color:#7D5F12!important}
+.vs-row span:first-child{color:#A8A49A}
+#section-community [style*="#6a6a64"]{color:#A8A49A!important}
+#section-guarantee [style*="#444440"]{color:#8C887F!important}
+.guarantee p{color:#A8A49A}
+footer p,footer a{color:#8C887F}
 </style>
 <!-- Meta Pixel Code -->
 <script>
